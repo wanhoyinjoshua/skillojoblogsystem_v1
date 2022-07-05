@@ -6,7 +6,7 @@ export const InsertImageimproved = () => {
 		const url = URL.createObjectURL(event.target.files[0]);
         
         insertImage(editor, url)
-        let blob = await fetch(url).then(r => r.blob());
+        let blob = await fetch(url).then(r => r);
         console.log(blob)
 		
 	};

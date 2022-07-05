@@ -93,7 +93,9 @@ export const SubmitButton = (props:props) => {
             }
             else if(arrOfObj1[i]["type"]== "video"){
               if(arrOfObj1[i]["url"].includes("blob")){
-                let blob = await fetch(arrOfObj1[i]["url"]).then(r => r.blob());
+                
+                //let blob = await fetch(`${urljj[1]}`).then(r => r.blob());
+                let blob = await fetch(arrOfObj1[i]["url"]).then(r => r.arrayBuffer());
             
                 const { url } = await fetch("http://localhost:3001/s3Url").then(res => res.json())
                 

@@ -3,11 +3,14 @@ import {insertVideo} from "../slate"
 export const InsertVideoimproved = () => {
     const editor = useSlateStatic()
     const changeHandler = async (event) => {
-		const url = URL.createObjectURL(event.target.files[0]);
-        
-        insertVideo(editor, url)
-        let blob = await fetch(url).then(r => r.blob());
-        console.log(blob)
+		const url2 = window.URL.createObjectURL(event.target.files[0]);
+    console.log(event.target.files[0])
+    console.log(url2)
+    insertVideo(editor, url2)
+    var url= url2.split("blob:")
+    console.log(url)
+    let blob = await fetch(`${url2}`).then(r => r.arrayBuffer());
+    console.log(blob)
 		
 	};
     return (

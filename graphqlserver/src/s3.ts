@@ -6,10 +6,10 @@ const randomBytes = promisify(crypto.randomBytes)
 
 dotenv.config()
 
-const region = "ap-southeast-2"
-const bucketName = "skillojodirectupload"
-const accessKeyId = "AKIARUXOQHDZNMRBN7FP"
-const secretAccessKey = "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"
+const region = env.region
+const bucketName = env.bucketname
+const accessKeyId = env.keyid
+const secretAccessKey = env.accesskey
 
 const s3 = new aws.S3({
   region,
